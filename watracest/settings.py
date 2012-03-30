@@ -1,8 +1,15 @@
 import os
 
 
-# Redis settings
-REDIS_URL = os.environ.get('REDISTOGO_URL', 'redis://localhost:6379/0')
+# Redis settings. Use special settings for ep.io
+try:
+    from bundle_config import config
+except ImportError:
+    REDIS_URL = os.environ.get('REDISTOGO_URL', 'redis://localhost:6379/0')
+else:
+    REDIS_HOST = config['redis']['host']
+    REDIS_PORT = config['redis']['port']
+    REDIS_PASSWORD = config['redis']['password']
 
 # Database keys settings
 DATABASE_KEY = 'watracest:ragefaces'
