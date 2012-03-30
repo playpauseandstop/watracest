@@ -2,7 +2,7 @@ import os
 
 
 # Redis settings
-REDIS_URL = os.environ.get('REDIS_TO_GO', 'redis://localhost:6379/0')
+REDIS_URL = os.environ.get('REDISTOGO_URL', 'redis://localhost:6379/0')
 
 # Database keys settings
 DATABASE_KEY = 'watracest:ragefaces'
