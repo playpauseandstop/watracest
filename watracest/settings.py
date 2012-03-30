@@ -1,14 +1,24 @@
 import os
 
+from flask import json
 
-# Redis settings. Use special settings for ep.io
+
+# Redis settings. At first, we try to check ep.io configuration
 try:
     from bundle_config import config
 except ImportError:
-    REDIS_URL = os.environ.get('REDISTOGO_URL', 'redis://localhost:6379/0')
+    # Then DotCloud configuration
+    if os.path.isfile('/home/dotcloud/environment.json'):
+        data = json.loads(open('/home/dotcloud/environment.json').read())
+        REDIS_URL = data['DOTCLOUD_DATA_REDIS_URL']
+    # And finally try to read Heroku configuration and fallback to default
+    # settings
+    else:
+        REDIS_URL = \
+            os.environ.get('REDISTOGO_URL', 'redis://localhost:6379/0')
 else:
     REDIS_HOST = config['redis']['host']
-    REDIS_PORT = int(config['redis']['port'])
+    REDIS_PORT = config['redis']['port']
     REDIS_PASSWORD = config['redis']['password']
 
 # Database keys settings
