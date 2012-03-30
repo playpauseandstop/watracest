@@ -27,4 +27,4 @@ add_url(app, '/show-me-the-truth', 'views.show_me')
 if __name__ == '__main__':
     app.debug = os.environ.get('DEBUG', True)
     app.run(host=os.environ.get('HOST', '0.0.0.0'),
-            port=os.environ.get('PORT', 4352))
+            port=int(os.environ.get('PORT', 4352)))
