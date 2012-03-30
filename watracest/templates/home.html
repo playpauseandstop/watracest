@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% block content %}
+{% if not face %}
+  <h1>Which Rage Face Are You?</h1>
+
+  <p class="indent-bottom indent-top">
+    <strong>Sensational news!</strong> British scientists discovered ultimate new formula
+    for finding out which rage face you are. Only now and only for 10 days for free we can
+    use this formula! So, don't <strong>wait anymore</strong> and click on the button below!
+  </p>
+
+  <p>
+    <a class="btn btn-success btn-large" href="{{ url_for("find_out") }}">
+      <i class="icon-fire icon-white"></i>
+      <strong>FIND OUT!</strong>
+    </a>
+  </p>
+{% else %}
+  <h1>You ARE</h1>
+
+  <p class="align-center indent-bottom indent-top">
+    <img alt="rage face" src="{{ face }}" width="50%">
+  </p>
+
+  <p>
+    <a class="btn btn-info btn-large" href="{{ url_for("show_me") }}">
+      <i class="icon-exclamation-sign icon-white"></i>
+      Show me how it happened
+    </a>
+  </p>
+
+  <p>
+    <a class="btn btn-inverse btn-large" href="{{ url_for("reset") }}">
+      <i class="icon-ban-circle icon-white"></i>
+      I don't want to live on this planet anymore!
+    </a>
+  </p>
+{% endif %}
+{% endblock %}

@@ -1,0 +1,19 @@
+body {
+    padding-top: 60px;
+}
+
+span.kwd {
+    font-weight: bold;
+}
+
+.align-center {
+    text-align: center;
+}
+
+.indent-bottom {
+    margin-bottom: 2em;
+}
+
+.indent-top {
+    margin-top: 2em;
+}
