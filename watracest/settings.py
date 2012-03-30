@@ -1,7 +1,8 @@
+import os
+
+
 # Redis settings
-REDIS_HOST = 'localhost'
-REDIS_PORT = 6379
-REDIS_DB = 0
+REDIS_URL = os.environ.get('REDIS_TO_GO', 'redis://localhost:6379/0')
 
 # Database keys settings
 DATABASE_KEY = 'watracest:ragefaces'
