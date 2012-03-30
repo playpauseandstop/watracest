@@ -43,7 +43,7 @@
               setTimeout(parseIt, 1000);
             }
             else if (data.status == "ok") {
-              window.location = "{{ url_for("home") }}";
+              location.reload();
             }
           }
         });
