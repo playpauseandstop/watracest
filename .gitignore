@@ -5,3 +5,5 @@ env/
 *.rdb
 
 .epio-app
+
+settings_local.py

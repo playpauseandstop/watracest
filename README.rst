@@ -24,7 +24,7 @@ Installation
     $ . env/bin/activate
     $ pip install -r requirements.txt
 
-**ps.** Too lazy to use bootstrap.py :)
+**ps.** Too lazy to use ``bootstrap.py`` :)
 
 Running
 =======
