@@ -8,7 +8,7 @@ except ImportError:
     REDIS_URL = os.environ.get('REDISTOGO_URL', 'redis://localhost:6379/0')
 else:
     REDIS_HOST = config['redis']['host']
-    REDIS_PORT = config['redis']['port']
+    REDIS_PORT = int(config['redis']['port'])
     REDIS_PASSWORD = config['redis']['password']
 
 # Database keys settings
