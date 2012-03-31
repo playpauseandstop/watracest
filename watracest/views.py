@@ -55,7 +55,9 @@ def parse_it():
     """
     status = 'parsing'
 
-    if not redis.exists(app.config['DATABASE_EXISTS_KEY']):
+    if redis.exists(app.config['DATABASE_KEY']):
+        status = 'ok'
+    elif not redis.exists(app.config['DATABASE_EXISTS_KEY']):
         try:
             parse_alltheragefaces()
         except:
