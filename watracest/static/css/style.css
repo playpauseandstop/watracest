@@ -17,3 +17,10 @@ span.kwd {
 .indent-top {
     margin-top: 2em;
 }
+
+.github-ribbon img {
+    border: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
