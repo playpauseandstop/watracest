@@ -1,4 +1,5 @@
 import logging
+import os
 import time
 
 from random import choice, shuffle
@@ -82,4 +83,13 @@ def show_me():
     """
     Show how calculation done for current user.
     """
+    # Scumbag thumbnail code
+    try:
+        from PIL import Image
+    except ImportError:
+        pass
+    else:
+        filename = os.path.join(app.static_folder, 'img', 'badumtss.png')
+        image = Image.open(filename)
+
     return render_template('show_me.html')
